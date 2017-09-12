@@ -1,4 +1,3 @@
-Die die1 = Die(150,150);
 void setup()
 {
 	noLoop();
@@ -6,7 +5,21 @@ void setup()
 }
 void draw()
 {
-	die1.show();
+	int x = 0;
+	int y = 50;
+	while (x <= 100)
+	{
+		while (y <= 250)
+		{
+			Die die1 = new Die(150+x,y);
+			Die die2 = new Die(150-x,y);
+			die1.show();
+			die2.show();
+			y = y + 100;
+		}		
+		x = x + 100;
+	}
+	
 }
 void mousePressed()
 {
@@ -27,6 +40,6 @@ class Die //models one single dice cube
 	}
 	void show()
 	{
-		rect(x, y, mySize, mySize);
+		rect(myX, myY, mySize, mySize);
 	}
 }
