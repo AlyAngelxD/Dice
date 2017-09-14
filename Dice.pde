@@ -5,19 +5,13 @@ void setup()
 }
 void draw()
 {
-	int x = 0;
-	int y = 50;
-	while (x <= 100)
+	for (int j = 0; j < 3; j++)
 	{
-		while (y <= 250)
+		for (int i = 0; i < 3; i++)
 		{
-			Die die1 = new Die(150+x,y);
-			Die die2 = new Die(150-x,y);
-			die1.show();
-			die2.show();
-			y = y + 100;
+			Die spongeBob = new Die(50+75*i,50+75*j);
+			spongeBob.show();
 		}		
-		x = x + 100;
 	}
 	
 }
@@ -27,12 +21,14 @@ void mousePressed()
 }
 class Die //models one single dice cube
 {
-	int mySize, myX, myY;
+	int myX, myY, dieSize, dotSize;
+	boolean dot1, dot2, dot3, dot4, dot5, dot6, dot7, dot8, dot9;
 	Die(int x, int y) //constructor
 	{
-		mySize = 20;
 		myX = x;
 		myY = y;
+		dieSize = 50;
+		dotSize = 8;
 	}
 	void roll()
 	{
@@ -40,6 +36,28 @@ class Die //models one single dice cube
 	}
 	void show()
 	{
-		rect(myX, myY, mySize, mySize);
+		fill(255);
+		rect(myX, myY, dieSize, dieSize);
+		//dots ordered from left to right, top to bottom
+		fill(0);
+		if (dot1 == true)
+			ellipse(myX + (dieSize/4), myY + (dieSize/4), dotSize, dotSize);
+		if (dot2 == true)
+			ellipse(myX + (dieSize/2), myY + (dieSize/4), dotSize, dotSize);
+		if (dot3 == true)
+			ellipse(myX + (dieSize*3/4), myY + (dieSize/4), dotSize, dotSize);
+		if (dot4 == true)
+			ellipse(myX + (dieSize/4), myY + (dieSize/2), dotSize, dotSize);
+		if (dot5 == true)
+			ellipse(myX + (dieSize/2), myY + (dieSize/2), dotSize, dotSize);
+		if (dot6 == true)
+			ellipse(myX + (dieSize*3/4), myY + (dieSize/2), dotSize, dotSize);
+		if (dot7 == true)
+			ellipse(myX + (dieSize/4), myY + (dieSize*3/4), dotSize, dotSize);
+		if (dot8 == true)
+			ellipse(myX + (dieSize/2), myY + (dieSize*3/4), dotSize, dotSize);
+		if (dot9 == true)
+			ellipse(myX + (dieSize*3/4), myY + (dieSize*3/4), dotSize, dotSize);
+
 	}
 }
