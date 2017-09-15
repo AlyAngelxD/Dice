@@ -10,6 +10,7 @@ void draw()
 		for (int i = 0; i < 3; i++)
 		{
 			Die spongeBob = new Die(50+75*i,50+75*j);
+			spongeBob.roll();
 			spongeBob.show();
 		}		
 	}
@@ -23,6 +24,7 @@ class Die //models one single dice cube
 {
 	int myX, myY, dieSize, dotSize;
 	boolean dot1, dot2, dot3, dot4, dot5, dot6, dot7, dot8, dot9;
+	double rand = (int)(Math.random()*6+1);
 	Die(int x, int y) //constructor
 	{
 		myX = x;
@@ -33,6 +35,45 @@ class Die //models one single dice cube
 	void roll()
 	{
 		//your code here
+		if (rand == 1)
+		{
+			dot5 = true;
+		}
+		else if (rand == 2)
+		{
+			dot3 = true;
+			dot7 = true;
+		}
+		else if (rand == 3)
+		{
+			dot1 = true;
+			dot5 = true;
+			dot9 = true;
+		}
+		else if (rand == 4)
+		{
+			dot1 = true;
+			dot3 = true;
+			dot7 = true;
+			dot9 = true;
+		}
+		else if (rand == 5)
+		{
+			dot1 = true;
+			dot3 = true;
+			dot5 = true;
+			dot7 = true;
+			dot9 = true;
+		}
+		else if (rand == 6)
+		{
+			dot1 = true;
+			dot3 = true;
+			dot4 = true;
+			dot6 = true;
+			dot7 = true;
+			dot9 = true;
+		}
 	}
 	void show()
 	{
