@@ -99,6 +99,5 @@ class Die //models one single dice cube
 			ellipse(myX + (dieSize/2), myY + (dieSize*3/4), dotSize, dotSize);
 		if (dot9 == true)
 			ellipse(myX + (dieSize*3/4), myY + (dieSize*3/4), dotSize, dotSize);
-
 	}
 }
