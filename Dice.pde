@@ -1,3 +1,6 @@
+
+int num;
+int sum = 0;
 void setup()
 {
 	noLoop();
@@ -5,6 +8,7 @@ void setup()
 }
 void draw()
 {
+	
 	for (int j = 0; j < 3; j++)
 	{
 		for (int i = 0; i < 3; i++)
@@ -12,13 +16,16 @@ void draw()
 			Die spongeBob = new Die(50+75*i,50+75*j);
 			spongeBob.roll();
 			spongeBob.show();
+			sum = sum + num;
 		}		
 	}
 	
+	System.out.println(sum);
 }
 void mousePressed()
 {
 	redraw();
+	sum = 0;
 }
 class Die //models one single dice cube
 {
@@ -38,17 +45,20 @@ class Die //models one single dice cube
 		if (rand == 1)
 		{
 			dot5 = true;
+			num = 1;
 		}
 		else if (rand == 2)
 		{
 			dot3 = true;
 			dot7 = true;
+			num = 2;
 		}
 		else if (rand == 3)
 		{
 			dot1 = true;
 			dot5 = true;
 			dot9 = true;
+			num = 3;
 		}
 		else if (rand == 4)
 		{
@@ -56,6 +66,7 @@ class Die //models one single dice cube
 			dot3 = true;
 			dot7 = true;
 			dot9 = true;
+			num = 4;
 		}
 		else if (rand == 5)
 		{
@@ -64,6 +75,7 @@ class Die //models one single dice cube
 			dot5 = true;
 			dot7 = true;
 			dot9 = true;
+			num = 5;
 		}
 		else if (rand == 6)
 		{
@@ -73,6 +85,7 @@ class Die //models one single dice cube
 			dot6 = true;
 			dot7 = true;
 			dot9 = true;
+			num = 6;
 		}
 	}
 	void show()
