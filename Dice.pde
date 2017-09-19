@@ -8,7 +8,7 @@ void setup()
 }
 void draw()
 {
-	
+	background(100);
 	for (int j = 0; j < 3; j++)
 	{
 		for (int i = 0; i < 3; i++)
@@ -19,7 +19,8 @@ void draw()
 			sum = sum + num;
 		}		
 	}
-	
+	textSize(25);
+	text(sum,135,35);
 	System.out.println(sum);
 }
 void mousePressed()
