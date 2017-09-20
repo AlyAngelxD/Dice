@@ -1,5 +1,6 @@
 
-int num;
+
+int num = 0;
 int sum = 0;
 void setup()
 {
@@ -8,7 +9,8 @@ void setup()
 }
 void draw()
 {
-	background(100);
+	
+	background(num*50,num*50,num*50);
 	for (int j = 0; j < 3; j++)
 	{
 		for (int i = 0; i < 3; i++)
